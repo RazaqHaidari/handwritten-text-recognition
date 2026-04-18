@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Handwritten OCR System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body class="home-page">
+
+<!-- 🔥 NAVBAR -->
+<nav class="navbar">
+    <div class="logo">HTR</div>
+
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/business">Business</a></li>
+        <li><a href="/demo">Digit Recognition</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+
+    <a href="/convert" class="btn-primary">Try Now</a>
+</nav>
+
+<!-- 🔥 HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>
+            Digitize Handwritten Documents with Handwriting OCR
+           
+        </h1>
+
+        <p>
+            Convert handwritten notes, invoices, and forms into accurate and editable digital content 
+using AI-powered OCR technology. <br>Improve efficiency, reduce manual effort, 
+and make your documents searchable and easy to manage.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="/convert" class="btn-primary">Try It Free</a>
+            <a href="#" class="btn-secondary">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<!-- 🔥 PRODUCTIVITY SECTION -->
+<section class="productivity">
+
+    <h2>Boosting Productivity</h2>
+    <p>
+        Digitize handwritten business documents and automate data entry
+        with advanced handwriting-to-text tools.
+    </p>
+
+    <!-- 🔵 CIRCLES -->
+    <div class="circle-flow">
+        <div>Automate Data Entry</div>
+        <div>Digitize Invoices</div>
+        <div>Convert Notes</div>
+        <div>Process Forms</div>
+        <div>Searchable PDFs</div>
+    </div>
+
+    <!-- 🖼️ IMAGE -->
+    <div class="productivity-img">
+        <img src="{{ url_for('static', filename='images/productivity.jpg') }}" alt="Productivity">
+    </div>
+
+</section>
+
+<!-- 🔥 FEATURES -->
+<section class="features">
+    <h2>Key Features</h2>
+
+    <div class="feature-grid">
+        <div class="card">
+            <h3>High Accuracy</h3>
+            <p>Powered by Google Vision API for near-perfect OCR results.</p>
+        </div>
+
+        <div class="card">
+            <h3>Fast Processing</h3>
+            <p>Optimized pipeline using OpenCV and deep learning.</p>
+        </div>
+
+        <div class="card">
+            <h3>Custom Output</h3>
+            <p>Convert text into handwritten-style images.</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>

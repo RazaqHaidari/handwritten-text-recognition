@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Handwritten OCR System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body class="home-page">
+
+<!-- 🔥 NAVBAR -->
+<nav class="navbar">
+    <div class="logo">HTR AI</div>
+
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/business">Business</a></li>
+        <li><a href="/demo">Demo</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+
+    <!-- 🔥 RIGHT SIDE -->
+    <div>
+        {% if session.get('user') %}
+            <a href="/logout" class="btn-primary">Logout</a>
+        {% else %}
+            <a href="/login" class="btn-secondary">Login</a>
+            <a href="/convert" class="btn-primary">Try Free</a>
+        {% endif %}
+    </div>
+</nav>
+
+<!-- 🔥 HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>
+            Convert Handwritten Text<br>
+            Into Digital Format
+        </h1>
+
+        <p>
+            AI-powered handwritten text recognition system using deep learning
+            and Google Vision API for high accuracy.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="/convert" class="btn-primary">Try It Free</a>
+            <a href="#" class="btn-secondary">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<!-- 🔥 PRODUCTIVITY SECTION -->
+<section class="productivity">
+
+    <h2>Boosting Productivity</h2>
+    <p>
+        Digitize handwritten business documents and automate data entry
+        with advanced handwriting-to-text tools.
+    </p>
+
+    <!-- 🔵 CIRCLES -->
+    <div class="circle-flow">
+        <div>Automate Data Entry</div>
+        <div>Digitize Invoices</div>
+        <div>Convert Notes</div>
+        <div>Process Forms</div>
+        <div>Searchable PDFs</div>
+    </div>
+
+    <!-- 🖼️ IMAGE -->
+    <div class="productivity-img">
+        <img src="{{ url_for('static', filename='images/productivity.jpg') }}" alt="Productivity">
+    </div>
+
+</section>
+
+<!-- 🔥 FEATURES -->
+<section class="features">
+    <h2>Key Features</h2>
+
+    <div class="feature-grid">
+        <div class="card">
+            <h3>High Accuracy</h3>
+            <p>Powered by Google Vision API for near-perfect OCR results.</p>
+        </div>
+
+        <div class="card">
+            <h3>Fast Processing</h3>
+            <p>Optimized pipeline using OpenCV and deep learning.</p>
+        </div>
+
+        <div class="card">
+            <h3>Custom Output</h3>
+            <p>Convert text into handwritten-style images.</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>

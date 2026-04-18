@@ -1,0 +1,118 @@
+/* 🔥 HOME PAGE STYLES */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+}
+
+/* BUTTONS */
+.btn-primary {
+    background: linear-gradient(45deg, #3b82f6, #06b6d4);
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    border: 1px solid #38bdf8;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+}
+
+.hero-content p {
+    color: #cbd5f5;
+}
+
+/* PRODUCTIVITY */
+.productivity {
+    background: #f8fafc;
+    color: black;
+    padding: 80px;
+    text-align: center;
+}
+
+.circle-flow {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.circle-flow div {
+    background: #3b82f6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.productivity-img img {
+    max-width: 400px;
+}
+
+/* FEATURES */
+.features {
+    padding: 80px;
+    text-align: center;
+}
+
+.feature-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+}

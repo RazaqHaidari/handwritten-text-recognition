@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Text to Handwriting</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>HandWritten Text Recognition</h1>
+
+    <form action="/convert" method="POST" enctype="multipart/form-data">
+
+    <div class="main">
+
+        <!-- LEFT SIDE -->
+        <div class="left">
+
+    <h2>How it Works</h2>
+
+    <div class="demo-box">
+        <p>Before</p>
+        <img src="/static/demo/before.jpg" class="demo-img">
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <div class="demo-box">
+        <p>After</p>
+        <img src="/static/demo/after.png" class="demo-img">
+    </div>
+
+    <hr>
+
+    <h3>Upload Handwritten Image</h3>
+    <input type="file" name="image" required>
+
+    {% if image %}
+        <img src="{{ image }}" class="preview">
+    {% endif %}
+
+</div>
+
+            <div class="right">
+
+    <h2>Customizations <span>(Optional)</span></h2>
+    <p class="note">Note: Few changes may reflect only in the generated image and not in the preview</p>
+
+    <!-- Handwriting Options -->
+    <div class="card">
+        <h3>Handwriting Options</h3>
+
+        <div class="row-flex">
+            <div class="field">
+                <label>Handwriting Font</label>
+                <select name="font">
+                    <option>Homemade Apple</option>
+                    <option>Arial</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Upload your handwriting font (Beta)</label>
+                <input type="file" name="font_file">
+            </div>
+        </div>
+    </div>
+
+    <!-- Page & Text Options -->
+    <div class="card">
+        <h3>Page & Text Options</h3>
+
+        <div class="row-flex">
+
+            <div class="field">
+                <label>Font Size</label>
+                <input type="number" name="font_size" value="16">
+                <span class="unit">pt</span>
+            </div>
+
+            <div class="field">
+                <label>Ink Color</label>
+                <select name="color">
+                    <option value="#0000ff">Black</option>
+                    <option value="#000000">Blue</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Page Size</label>
+                <select name="page_size">
+                    <option>A4</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Effects</label>
+                <select name="effects">
+                    <option>Shadows</option>
+                    <option>None</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Resolution</label>
+                <select name="resolution">
+                    <option>Normal</option>
+                    <option>High</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Spacing Options -->
+    <div class="card">
+        <h3>Spacing Options</h3>
+
+        <div class="row-flex">
+
+            <div class="field">
+                <label>Vertical Position</label>
+                <input type="number" name="vertical" value="5">
+                <span class="unit">px</span>
+            </div>
+
+            <div class="field">
+                <label>Word Spacing</label>
+                <input type="number" name="word_spacing" value="0">
+                <span class="unit">px</span>
+            </div>
+
+            <div class="field">
+                <label>Letter Spacing</label>
+                <input type="number" name="letter_spacing" value="0">
+                <span class="unit">pt</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Margin & Line Options -->
+    <div class="card">
+        <h3>Margin & Line Options</h3>
+
+        <div class="row-flex">
+
+            <div class="field toggle">
+                <label>Paper Margin: on</label>
+                <input type="checkbox" name="margin" checked>
+            </div>
+
+            <div class="field toggle">
+                <label>Paper Lines: on</label>
+                <input type="checkbox" name="lines" checked>
+            </div>
+
+            <div class="field">
+                <label>Upload Paper Image as Background</label>
+                <input type="file" name="bg_file">
+            </div>
+
+        </div>
+    </div>
+     <!-- ✅ BUTTON INSIDE FORM -->
+    <button type="submit" class="generate-btn">Generate Image</button>
+    
+
+</div></div>
+</form>
+
+    <!-- OUTPUT -->
+    {% if output_image %}
+    <div class="output">
+        <h2>Generated Output</h2>
+
+        <img src="{{ output_image }}" class="output-img">
+
+        <br>
+
+        <a href="{{ output_image }}" download>
+            <button class="download-btn">Download Image</button>
+        </a>
+    </div>
+    {% endif %}
+
+</div>
+<!-- ================= GUIDE ================= -->
+<div class="section">
+    <h2>🤓 Guide to Use</h2>
+
+    <ul>
+        <li>Upload a handwritten image using the upload button.</li>
+        <li>The system extracts text using AI (OCR).</li>
+        <li>Customize font, color, spacing from the right panel.</li>
+        <li>Click "Generate Image".</li>
+        <li>Download the generated clean handwritten output.</li>
+    </ul>
+</div>
+
+
+<!-- ================= CONTRIBUTORS ================= -->
+<div class="section">
+    <h2>👫 GitHub Contributors</h2>
+
+    <div class="contributors">
+
+        <div class="person">
+            <img src="/static/members/member.jpeg">
+            <p>Razaq Haidari</p>
+        </div>
+
+        <div class="person">
+            <img src="/static/members/member2.jpeg">
+            <p>Abdulhadi Rashad</p>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ================= FAQ ================= -->
+<div class="section">
+    <h2>❓ FAQs (Frequently Asked Questions)</h2>
+
+    <div class="faq">
+
+        <p><b>1. What is handwritten text recognition?</b><br>
+        It is a technology that converts handwritten text into digital text using AI.</p>
+
+        <p><b>2. Which model is used?</b><br>
+        Google Vision API for high accuracy recognition.</p>
+
+        <p><b>3. Does it work on messy handwriting?</b><br>
+        Yes, but accuracy depends on clarity.</p>
+
+        <p><b>4. Can it detect full pages?</b><br>
+        Yes, it supports multi-line and full-page text.</p>
+
+        <p><b>5. Is internet required?</b><br>
+        Yes, for API-based recognition.</p>
+
+        <p><b>6. Can I download output?</b><br>
+        Yes, you can download generated image.</p>
+
+        <p><b>7. Which formats are supported?</b><br>
+        JPG, PNG images.</p>
+
+        <p><b>8. Can I customize output?</b><br>
+        Yes, font, color, spacing, etc.</p>
+
+        <p><b>9. Is this real-time?</b><br>
+        Yes, results are generated instantly.</p>
+
+        <p><b>10. What is the accuracy?</b><br>
+        Around 90–98% depending on input quality.</p>
+
+    </div>
+</div>
+
+</body>
+</html>
